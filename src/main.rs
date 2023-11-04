@@ -6,7 +6,7 @@ async fn health_check() -> impl Responder {
 
 #[tokio::main]
 async fn main() -> Result<(), std::io::Error> {
-    HttpServer::new(|| App::new().route("/health_check", web::get().to(health_check)))
+    HttpServer::new(|| App::new().route("/health-check", web::get().to(health_check)))
         .bind("172.31.255.20:7777")?
         .run()
         .await
